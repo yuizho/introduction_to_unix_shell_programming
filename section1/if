@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if test -f  $1
+then
+    echo "the file exists."
+else
+    echo "the file does not exist."
+fi
+
+# needs space in []
+if [ -f $1 ]; then
+    echo "the file exists2."
+fi
