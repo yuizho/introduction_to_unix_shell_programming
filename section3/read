@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo -n "enter yes or no: "
+read ANSWER
+
+# the double quotation of variable is requred (because shell can not understand the variable is string).
+if [ "$ANSER" = "yes" -o "$ANSWER" = "no" ]; then
+    echo "your input is $ANSWER ."
+else
+    echo "input yes or no."
+fi

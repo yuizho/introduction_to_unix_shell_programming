@@ -1,0 +1,23 @@
+#!/bin/bash
+
+VARIABLE=""
+
+lsl() {
+    ls -l
+    VARIABLE="ls -l was executed!!"
+    # function can return exit status
+    return 0
+}
+
+greeting() {
+    for name in $@
+    do
+        echo "hello $name"
+    done
+}
+
+lsl
+echo $VARIABLE
+
+greeting bob alice
+echo $name
