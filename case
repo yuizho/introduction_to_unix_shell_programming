@@ -1,0 +1,9 @@
+#!/bin/sh
+
+STRING=abcd
+case "$STRING" in
+    ABCD)   echo "STIRNG is ABCD"   ;;
+    abcd)   echo "STIRNG is abcd"   ;;
+    # case can use whild card
+    *)  echo "other STRING" ;;
+esac
