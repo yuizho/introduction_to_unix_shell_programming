@@ -11,3 +11,17 @@ fi
 if [ -f $1 ]; then
     echo "the file exists2."
 fi
+
+# https://shellscript.sunone.me/if_and_test.html#%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%AF%94%E8%BC%83
+STR="hoge"
+if [ "$STR" = "hoge" -o "$STR" = "fuga" ]; then
+    echo "the STR is $STR"
+else
+    echo "unexpected value"
+fi
+
+# https://shellscript.sunone.me/if_and_test.html#%E6%95%B0%E5%80%A4%E3%81%AE%E6%AF%94%E8%BC%83
+NUM=10
+if [ $NUM -gt 5 -a $NUM -lt 15 ]; then
+    echo "the NUM is less than 15 and grater than 5."
+fi
