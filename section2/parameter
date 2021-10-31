@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+  echo "set at least one command line parameter."
+  exit 1
+fi
+
+# show first paramter ($0 is this script file)
+echo $1
+
+# show parameter count
+echo $#
+
+# show all paramter
+# "$ parameter a b c" -> "a b c"
+echo "$*"
+# "$ parameter a b c" -> "a" "b" "c"
+echo "$@"
+
+for i in $@
+do
+    echo "$i by for"
+done
