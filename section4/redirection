@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "-------------redirect to sdtout"
+cat xxx aaa > stdout.txt
+
+echo "-------------redirect to stderror"
+cat xxx aaa 2> stderror.txt
+
+echo "------------- redirect to stdout and stderror"
+cat xxx aaa > both.txt 2>&1
