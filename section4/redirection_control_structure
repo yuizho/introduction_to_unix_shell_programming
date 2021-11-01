@@ -1,0 +1,21 @@
+#!/bin/bash
+
+{
+    CONTENT=$(cat xxx)
+    echo "this program read xxx file. content: $CONTENT"
+} >  control_structure.txt
+
+# read all line from yyy file
+while read LINE
+do
+    echo "$LINE"
+done < yyy
+
+LAST_LINE=
+exec < yyy
+while read LINE
+do
+    LAST_LINE=$LINE
+done
+
+echo "last line is $LAST_LINE"

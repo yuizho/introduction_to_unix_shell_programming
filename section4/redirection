@@ -4,7 +4,18 @@ echo "-------------redirect to sdtout"
 cat xxx aaa > stdout.txt
 
 echo "-------------redirect to stderror"
-cat xxx aaa 2> stderror.txt
+FILE=stderror.txt
+cat xxx aaa 2> $FILE
 
 echo "------------- redirect to stdout and stderror"
 cat xxx aaa > both.txt 2>&1
+# this is also ok in bash, zsh  (I think this is more simple)
+cat xxx aaa &> both2.txt
+
+echo "dispose both result"
+# /dev/null is like garbage box (https://ja.wikipedia.org/wiki//dev/null)
+cat xxx aaa > /dev/null 2>&1
+# this is also ok in bash, zsh (I think this is more simple)
+cat xxx aaa &> /dev/null
+
+echo "this is Error Message!!!" 1>&2

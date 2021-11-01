@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+cat << END
+This is a
+here document.
+END
+
+echo "---------------------"
+
+DOC=document
+cat << \END
+This is a
+also here $DOC.
+END
