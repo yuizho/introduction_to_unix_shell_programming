@@ -1,12 +1,21 @@
 #!/bin/bash
 
+# create tmp file by PID
 echo "this is tmp file" > $$
 
-echo "start loop"
+Cleanup() {
+    rm $$
+    exit $1
+}
+
+echo "start loop for 10 seconds......"
 # write commands in single quote (not back quote)
 # https://shellscript.sunone.me/signal_and_trap.html
-trap 'echo "trapped."; rm $$; exit 1' 1 2 3 15
-while :
+trap 'echo "trapped."; Cleanup 1' 1 2 3 15
+for i in $(seq 0 9)
 do
     sleep 1
 done
+
+# normal termination
+Cleanup 
