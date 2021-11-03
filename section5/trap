@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "this is tmp file" > $$
+
+echo "start loop"
+# write commands in single quote (not back quote)
+# https://shellscript.sunone.me/signal_and_trap.html
+trap 'echo "trapped."; rm $$; exit 1' 1 2 3 15
+while :
+do
+    sleep 1
+done
