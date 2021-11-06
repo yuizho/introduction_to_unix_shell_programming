@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat sample.txt |
+    sed -e "s/Old1/New1/g" -e "s/Old2/New2/g" |
+    while read LINE
+    do
+        echo $LINE
+    done
