@@ -1,0 +1,31 @@
+#!/bin/bash
+
+FLAG=FALSE
+VALUE=
+OPT=
+while getopts fv: OPT
+do
+    case $OPT in
+    f) FLAG=TRUE
+        ;;
+    v) VALUE=$OPTARG
+        ;;
+    \?) echo "Usage: $0 [-f] [-v value]" 1>&2
+        exit 1 ;;
+    esac
+done
+
+# after this line $1 points the parameter after handled - options
+shift $(expr $OPTIND - 1)
+
+
+if [ "$FLAG" = "TRUE" ]; then
+    echo "option f is specified."
+fi
+
+# check if $VALUE is blank
+if [ "$VALUE" != "" ]; then
+    echo "option v is specified."
+fi
+
+echo "parameter is $1"
